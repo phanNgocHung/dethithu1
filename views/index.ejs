@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FPT Polytechnic</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+<body class="container">
+
+
+<button ><a href="/add/">Add</a></button>
+
+<% data.forEach((bicycle) => { %>
+  <h1> mã xe: <%= bicycle.maXe%> </h1>
+  <h1> tên xe: <%= bicycle.giaNhap%> </h1>
+  <h1> giá tiền: <%= bicycle.soLuong%> </h1>
+  <button><a href="/delete/?maXe=<%= bicycle.maXe %>">Delete</a></button>
+  <button ><a href="/update/?maXe=<%= bicycle.maXe %>">update</a></button>
+  <%for(var i=0;i<bicycle.hinhAnh.length;i++){%>
+    <img src="/uploads/<%= bicycle.hinhAnh[i]%>" alt="<%= bicycle.tenXe%>" style="width: 25%">
+  <%}%>
+  <p>-----------------------------------</p>
+<%})%>
+</body>
+</html>
